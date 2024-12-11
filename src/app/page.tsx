@@ -14,6 +14,10 @@ export default function Page() {
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
     setUserInput(input);
+    if (input === "") {
+      setResultText("");
+      return;
+    }
     const result = `${input.split("").join("゛")}゛`;
     setResultText(result);
   }
